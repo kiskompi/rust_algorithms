@@ -1,0 +1,19 @@
+use rand::Rng;
+
+pub mod sorts;
+
+pub fn random(size: usize) -> Vec<i32>{
+    let mut vector = Vec::new();
+    for i in 0..size{
+        let mut rng = super::rand::thread_rng();
+        vector.push(rng.gen::<i32>()%1000);
+    }
+    vector
+}
+
+pub fn printv(vector:&Vec<i32>){
+    for i in vector{
+        print!("{}", i);
+    }
+    println!("---");
+}

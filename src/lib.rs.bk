@@ -1,0 +1,31 @@
+#![deny(missing_docs,
+        missing_debug_implementations, missing_copy_implementations,
+        trivial_casts, trivial_numeric_casts,
+        unsafe_code,
+        unstable_features,
+        unused_import_braces, unused_qualifications)]
+#![cfg_attr(feature = "dev", allow(unstable_features))]
+#![cfg_attr(feature = "dev", feature(plugin))]
+#![cfg_attr(feature = "dev", plugin(clippy))]
+
+// Build­ing your pro­ject with cargo build --features "dev" now auto­mat­i­cally
+// includes clip­py's lints. (By the way, you only need to allow
+// unstable_features if you have pre­vi­ously denyed it, of course.)
+
+extern crate rand;
+
+mod vectors;
+mod trees;
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        let size: usize = 30;
+        let mut vector = super::vectors::random(size);
+        super::vectors::printv(&vector);
+        let sorted_vector =
+            super::vectors::sorts::insertion_sort(vector, true);
+
+    }
+}

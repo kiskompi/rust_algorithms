@@ -1,0 +1,13 @@
+(a and b) or (not a and not b) - back_propagate
+
+ha a van b van és a < b : a -> b
+ha a van b van és a > b : b -> a
+ha a van b non : csak a
+ha a non b van : csak b
+ha a non b non : terminate
+
+!A || !B
+!A
+# !B
+A&B->C
+A&B->D

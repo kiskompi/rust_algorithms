@@ -1,0 +1,16 @@
+mod insertion;
+mod merge;
+mod quick;
+
+pub fn insertion_sort(vector: Vec<i32>, inc_ord: bool) -> Vec<i32>{
+    let mut count:usize = 0;
+    for i in 0..vector.len(){
+        insertion::back_propagate(&vector, count+1, inc_ord);
+        count = count+1;
+    }
+    vector
+}
+
+pub fn merge_sort(){}
+
+pub fn quick_sort(){}

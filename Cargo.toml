@@ -1,0 +1,12 @@
+[package]
+name = "algorithm_aux"
+version = "0.1.0"
+authors = ["andris"]
+
+[dependencies]
+rand = "0.3"
+clippy = {version = "0.0.21", optional = true}
+
+[features]
+default = []
+dev = ["clippy"]
